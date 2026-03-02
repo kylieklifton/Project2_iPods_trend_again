@@ -78,6 +78,24 @@
 }
     </style>
 </head>
+        </article>
+
+    <script>
+    window.addEventListener("message", function(event) {
+      if (event.data["datawrapper-height"]) {
+        var iframes = document.querySelectorAll("iframe");
+        for (var chartId in event.data["datawrapper-height"]) {
+          for (var i = 0; i < iframes.length; i++) {
+            if (iframes[i].contentWindow === event.source) {
+              iframes[i].style.height = event.data["datawrapper-height"][chartId] + "px";
+            }
+          }
+        }
+      }
+    });
+    </script>
+</body>
+</html>
 <body>
     <article class="container">
         <h1>The Dumbest iPod Won</h1>
@@ -106,16 +124,16 @@
 </div>
         <p>The Shuffle isn't alone in the appreciation game—but it is the clear winner. When looking at premium-condition listings (the top 25% by price), five of nine devices analyzed showed gains over their original MSRP: the iPod Classic (+42%), iPod Nano (+23%), iPod Hi-Fi (+19%), and even the Mac Mini M1 (+177%). But none matched the Shuffle's across-the-board gains.</p>
 
-        <div class="chart-container">
+    <div class="chart-container">
     <iframe 
         title="At the High End of the Market, the Shuffle Leads All Devices"
-        aria-label="Horizontal bar chart showing percent change from original MSRP for top 25% of eBay listings"
-        id="datawrapper-chart-XXXXXX"
-        src="https://datawrapper.dwcdn.net/XXXXXX/1/"
+        aria-label="Horizontal bar chart showing percent change from original MSRP for the top 25% of eBay listings"
+        id="datawrapper-chart-87sUa"
+        src="https://datawrapper.dwcdn.net/87sUa/2/"
         scrolling="no"
         frameborder="0"
         style="width: 100%; border: none;"
-        height="600"
+        height="406"
         data-external="1">
     </iframe>
     <p class="chart-caption">
