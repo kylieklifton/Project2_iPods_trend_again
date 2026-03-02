@@ -1,6 +1,3 @@
-# Exclude Claude folder
-.claude/
-
 # Exclude PNG images
 
 # Environment files
