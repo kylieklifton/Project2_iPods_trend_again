@@ -3,89 +3,89 @@
 ## 2026-03-01
 
 ### Project Goal
-Analyze whether discontinued portable music players sell above their original retail price.
+Figure out if discontinued music players are actually selling for more than they originally cost.
 
 ---
 
-### The API Journey (Honest Reflection)
+### The API Situation
 
-**What I wanted:** Access to eBay's sold/completed listings data through the Finding API. This would show actual transaction prices—what people really paid—not just what sellers are asking.
+**What I wanted:** Sold listing data from eBay's Finding API - actual prices people paid, not just what sellers are asking.
 
-**What happened:** I spent hours setting up eBay API access:
-- Created a developer account
-- Built a verification endpoint on Vercel
-- Configured OAuth credentials
+**What happened:** Spent way too long setting up eBay API access:
+- Made a developer account
+- Set up a verification endpoint on Vercel
+- Got OAuth working
 - Finally got production access
 
-Then the Finding API ran out of tokens almost immediately.
+Then the Finding API hit its rate limit almost immediately.
 
-**My biggest regret:** I didn't save the data to CSV before the rate limit hit. The API worked once—I saw real sold prices—and then it was gone. I can't get that data back until the rate limit resets (could be hours or days). For a project due today, that's devastating.
+**Biggest regret:** I didn't save the data to CSV before the rate limit kicked in. The API worked once and then it was gone. Can't get that data back until the limit resets. Not great when the project is due today.
 
-**What I learned the hard way:**
-1. ALWAYS export data to CSV immediately when an API works
-2. Rate limits on new developer accounts are brutal
-3. The Finding API (sold items) has stricter limits than Browse API (current listings)
+**What I learned:**
+1. ALWAYS save data to CSV right away when an API works
+2. Rate limits on new accounts are rough
+3. Finding API has stricter limits than Browse API
 
-**What I had to do instead:** Fall back to the Browse API, which only shows current asking prices. This includes damaged items, parts, and overpriced listings that will never sell—it's messier data.
+**What I ended up using:** The Browse API, which only shows current asking prices. It's messier - includes damaged items and overpriced stuff that'll never sell.
 
 ---
 
-### Data Source (What I Actually Have)
+### Data Source
 - **Source:** eBay Browse API (current listings, NOT sold prices)
-- **Listings per device:** 100 (equal sample sizes for fair comparison)
-- **Total listings:** 1,000 across 10 devices
-- **Condition filter:** None (all conditions included)
-- **Date pulled:** March 1, 2026
-- **Limitation:** These are asking prices, not verified sales
+- **Listings per device:** 100 each
+- **Total:** 1,000 listings across 10 devices
+- **Condition filter:** None - included everything
+- **Date:** March 1, 2026
+- **Limitation:** These are asking prices, not actual sales
 
-**Why no condition filter:** Including all conditions reveals the full price spectrum—from "for parts" junk to sealed collector pieces. This shows the real story: the *median* device depreciates, but *premium* condition devices can appreciate significantly.
+Decided not to filter by condition because it shows the full range - from junky "for parts" listings to sealed collector pieces.
 
 ---
 
 ### Devices Analyzed
 
-| Device | Original MSRP | Listings | Condition |
-|--------|---------------|----------|-----------|
-| iPod Classic | $249 | 100 | Used - Good+ |
-| iPod Mini | $249 | 100 | Used - Good+ |
-| iPod Nano | $149 | 100 | Used - Good+ |
-| iPod Shuffle | $49 | 100 | Used - Good+ |
-| iPod Touch | $399 | 100 | Used - Good+ |
-| iPod 1st Gen | $399 | 100 | Used - Good+ |
-| iPod Hi-Fi | $349 | 100 | Used - Good+ |
-| Zune HD | $290 | 100 | Used - Good+ |
-| Sony Walkman | $298 | 100 | Used - Good+ |
-| Mac Mini M1 | $699 | 100 | Used - Good+ |
+| Device | Original MSRP | Listings |
+|--------|---------------|----------|
+| iPod Classic | $249 | 100 |
+| iPod Mini | $249 | 100 |
+| iPod Nano | $149 | 100 |
+| iPod Shuffle | $49 | 100 |
+| iPod Touch | $399 | 100 |
+| iPod 1st Gen | $399 | 100 |
+| iPod Hi-Fi | $349 | 100 |
+| Zune HD | $290 | 100 |
+| Sony Walkman | $298 | 100 |
+| Mac Mini M1 | $699 | 100 |
 
 ---
 
 ### Key Findings
 
-**The problem with median prices:** When you look at ALL listings, most devices appear to depreciate because the data includes damaged units, parts, and junk.
+Looking at median prices, most devices look like they depreciate. But that's because the data includes a lot of damaged units and junk.
 
-**The real story is in the premium tier.** When filtering for better-condition listings (top 25%), a different picture emerges:
+The interesting stuff is in the top 25% tier (premium condition):
 
 | Device | MSRP | Top 25% Price | Change |
 |--------|------|---------------|--------|
-| iPod Shuffle | $49 | $130 | **+165%** |
-| iPod Nano 7th Gen | $149 | $167 | **+12%** |
-| iPod Hi-Fi | $349 | $390 | **+12%** |
-| iPod Classic | $249 | $255 | **+2%** |
+| iPod Shuffle | $49 | $130 | +165% |
+| iPod Nano | $149 | $167 | +12% |
+| iPod Hi-Fi | $349 | $390 | +12% |
+| iPod Classic | $249 | $255 | +2% |
 | iPod Touch | $399 | $260 | -35% |
 | iPod Mini | $249 | $100 | -60% |
 
-**The takeaway:** Condition is everything. Premium-condition discontinued devices CAN appreciate—but the average listing is junk.
+Basically: condition matters a lot. Premium condition devices can appreciate, but the average listing is junk.
 
 ---
 
-### Files Created
-- `ebay_browse_api_data.csv` — Summary statistics by device
-- `ebay_all_listings.csv` — All 1,346 individual listings
-- `ipod_price_analysis.ipynb` — Analysis notebook with charts
+### Files
+- `ebay_browse_api_data.csv` — Summary stats by device
+- `ebay_all_listings.csv` — All the individual listings
+- `ipod_price_analysis.ipynb` — Analysis notebook
 
 ---
 
-### Interview Questions for Used Tech Store
+### Interview Questions
 1. Do you see iPod Shuffles selling above their original $49 price?
 2. How much does condition affect pricing for iPod Classics?
 3. Have you ever had an iPod Hi-Fi come through? What did it sell for?
@@ -93,19 +93,19 @@ Then the Finding API ran out of tokens almost immediately.
 
 ---
 
-### Condition Filter Decision
+### The Condition Filter Thing
 
-**The confusion:** After adding a "Used - Good or better" condition filter, all devices showed depreciation below MSRP. The numbers looked much worse than before.
+At first I added a "Used - Good or better" filter and suddenly all the devices showed depreciation. The numbers looked way worse.
 
-**What I realized:** The condition filter excluded New/Sealed listings—those rare, pristine units that command premium prices. By filtering them out, I removed the very data points that showed appreciation.
+Then I realized the filter was excluding New/Sealed listings - the rare mint units that actually show appreciation. By filtering them out I was removing the interesting data.
 
-**The fix:** Removed the condition filter entirely. Now the data includes all conditions, which reveals the full price spectrum. The story becomes clearer: *condition is everything*. The median price (mostly used/worn units) depreciates, but the top 25% (mint/sealed) can appreciate significantly.
+So I took off the filter. Now the data shows the full picture: median prices depreciate, but top 25% can appreciate a lot.
 
 ---
 
-### What I Would Do Differently
-- Save API data to CSV IMMEDIATELY
+### What I'd Do Differently
+- Save API data to CSV right away
 - Test rate limits with small queries first
 - Have a backup data source ready
-- Start earlier so rate limit resets aren't deadline-breaking
-- Be careful with filters—they can accidentally remove the most interesting data
+- Start earlier
+- Be careful with filters - they can hide the good stuff
