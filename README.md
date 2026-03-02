@@ -102,4 +102,4 @@ Interviewed in person, March 1, 2026
 
 ## AI Disclosure
 
-Claude was used to assist with API integration, data analysis, and drafting. Conversation linked in submission.
+Claude was used to assist with API integration and some data analysis to troubleshoot the API challenges.
