@@ -1,162 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Dumbest iPod Won</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Libre Franklin', sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #fff;
-        }
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            line-height: 1.2;
-        }
-        .subtitle {
-            font-size: 1.25rem;
-            color: #555;
-            margin-bottom: 8px;
-        }
-        .byline {
-            font-size: 0.9rem;
-            color: #777;
-            margin-bottom: 30px;
-        }
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        .chart-container {
-            margin: 40px 0;
-        }
-        .chart-container img {
-            width: 100%;
-            height: auto;
-        }
-        .chart-caption {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 8px;
-        }
-        .pullquote {
-            border-left: 4px solid #2c3e50;
-            padding-left: 20px;
-            margin: 30px 0;
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #333;
-        }
-        .source-note {
-            font-size: 0.85rem;
-            color: #777;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-        a {
-            color: #2c3e50;
-        }
-        .ipod-highlight {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Dumbest iPod Won</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #fff;
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.byline {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.chart-container {
+    margin: 40px 0;
+}
+
+.chart-caption {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 8px;
+}
+
+.source-note {
+    font-size: 0.85rem;
+    color: #777;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+a {
+    color: #2c3e50;
+}
+
+.ipod-highlight {
     color: #3AC4A0;
     font-weight: 600;
 }
-    </style>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".container");
-  if (!container) return;
+</style>
+</head>
 
-  // Replace iPod Shuffle first so "iPod" doesn't wrap inside it
-  container.innerHTML = container.innerHTML
-    .replaceAll("iPod Shuffle", '<span class="ipod-highlight">iPod Shuffle</span>');
-});
-</script>
-    window.addEventListener("message", function(event) {
-      if (event.data["datawrapper-height"]) {
-        var iframes = document.querySelectorAll("iframe");
-        for (var chartId in event.data["datawrapper-height"]) {
-          for (var i = 0; i < iframes.length; i++) {
-            if (iframes[i].contentWindow === event.source) {
-              iframes[i].style.height = event.data["datawrapper-height"][chartId] + "px";
-            }
-          }
+<body>
+
+<article class="container">
+
+<h1>The Dumbest <span class="ipod-highlight">iPod</span> Won 🎧</h1>
+
+<p class="subtitle">
+The screenless <span class="ipod-highlight">iPod Shuffle</span> is the only discontinued Apple device selling above its original price
+</p>
+
+<p class="byline">By Kylie Clifton | March 1, 2026</p>
+
+<p>
+When Apple discontinued the <span class="ipod-highlight">iPod Shuffle</span> in 2017, it seemed like the end of an era. The tiny, screenless music player, dismissed by many as the “dumb” iPod, had been overshadowed by smartphones for years. But nearly a decade later, something unexpected has happened: the Shuffle is now worth more than it cost new.
+</p>
+
+<p>
+An analysis of 900 eBay listings across nine discontinued devices found that the <span class="ipod-highlight">iPod Shuffle</span> is the only one where even average listings sell above the original retail price. While most vintage tech depreciates the moment it leaves the shelf, Shuffles now sell for a median of $65, a 33% premium. Premium-condition units fetch nearly $150, more than triple the original cost.
+</p>
+
+<div class="chart-container">
+<iframe 
+title="Only the iPod Shuffle Is Selling Above Its Original Price"
+aria-label="Grouped bar chart comparing original MSRP and median resale prices"
+id="datawrapper-chart-Jt6VH"
+src="https://datawrapper.dwcdn.net/Jt6VH/1/"
+scrolling="no"
+frameborder="0"
+style="width: 100%; border: none;"
+height="703"
+data-external="1">
+</iframe>
+<p class="chart-caption">
+Median asking prices from 100 eBay listings per device, pulled March 1, 2026. Source: eBay Browse API.
+</p>
+</div>
+
+<p>
+The Shuffle isn’t alone in appreciating, but it is the clear winner. When looking at premium-condition listings, the top 25% by price, five of nine devices analyzed showed gains over their original MSRP: the iPod Classic (+42%), iPod Nano (+23%), iPod Hi-Fi (+19%), and even the Mac Mini M1 (+177%). But none matched the Shuffle’s across-the-board gains.
+</p>
+
+<div class="chart-container">
+<iframe 
+title="At the High End of the Market, the Shuffle Leads All Devices"
+aria-label="Horizontal bar chart showing percent change from original MSRP for the top 25% of eBay listings"
+id="datawrapper-chart-87sUa"
+src="https://datawrapper.dwcdn.net/87sUa/2/"
+scrolling="no"
+frameborder="0"
+style="width: 100%; border: none;"
+height="406"
+data-external="1">
+</iframe>
+<p class="chart-caption">
+Top 25% of current eBay listings by price compared with original MSRP (100 listings per device; pulled March 1, 2026). Source: eBay Browse API.
+</p>
+</div>
+
+<p>
+The losers tell an equally important story. The iPod Touch, Apple’s most feature-rich iPod, has lost 66% of its value. The Microsoft Zune HD, despite its cult following, is down 69%. The iPod Mini, once a cultural phenomenon, now sells for less than $70.
+</p>
+
+<p>
+Mohammad Uddin, manager of TSS Phones and Computers in New York, has spent ten years in the used device business. He’s seen the occasional customer ask for a classic iPod, but says there’s “no significant number” of requests. When they do come in, though, the appeal is clear: “They always like the style,” he says. “How it used to play the music … they can use it for a long time.”
+</p>
+
+<p>
+That nostalgia doesn’t extend to every old Apple product. Uddin explains why the iPod Touch fails where the Shuffle succeeds: “That thing can be done on the phone, so they don’t need any extra device to carry on.”
+</p>
+
+<p>
+There’s a pattern here. The devices that hold value are the ones that do one thing well: play music without trying to be a smartphone. The Shuffle had no screen, no apps and no distractions. The Classic had its iconic click wheel. The Hi-Fi was simply a speaker. Meanwhile, the Touch was always just a worse iPhone, and now that phones are ubiquitous, nobody needs one.
+</p>
+
+<p>
+The data suggests we’re not in the middle of a massive nostalgia bubble. Uddin confirms it’s a “smaller bubble,” real demand from a niche audience rather than a mainstream revival. But for those niche buyers, simplicity has become a feature rather than a limitation. In an age of infinite notifications and algorithmic feeds, a device that just plays music has found its moment.
+</p>
+
+<p>
+The dumbest iPod turned out to be the smartest investment.
+</p>
+
+<p class="source-note">
+<strong>Data:</strong> Analysis of 900 eBay listings collected via eBay Browse API on March 1, 2026. Original MSRP data from Apple press releases and product archives.<br><br>
+<strong>GitHub Repository:</strong>
+<a href="https://github.com/kylieklifton/Project2_iPods_trend_again">github.com/kylieklifton/Project2_iPods_trend_again</a>
+</p>
+
+</article>
+
+<script>
+window.addEventListener("message", function(event) {
+  if (event.data["datawrapper-height"]) {
+    var iframes = document.querySelectorAll("iframe");
+    for (var chartId in event.data["datawrapper-height"]) {
+      for (var i = 0; i < iframes.length; i++) {
+        if (iframes[i].contentWindow === event.source) {
+          iframes[i].style.height = event.data["datawrapper-height"][chartId] + "px";
         }
       }
-    });
-    </script>
-</body>
-</html>
-<body>
-    <article class="container">
-        <h1>The Dumbest iPod Won</h1>
-        <p class="subtitle">The screenless iPod Shuffle is the only discontinued Apple device selling above its original price</p>
-        <p class="byline">By Kylie Clifton | March 1, 2026</p>
+    }
+  }
+});
+</script>
 
-        <p>When Apple discontinued the iPod Shuffle in 2017, it seemed like the end of an era. The tiny, screenless music player, dismissed by many as the “dumb” iPod, had been overshadowed by smartphones for years. But nearly a decade later, something unexpected has happened: the Shuffle is now worth more than it cost new.</p>
-
-        <p>An analysis of 900 eBay listings across nine discontinued devices found that the iPod Shuffle is the only one where even average listings sell above the original retail price. While most vintage tech depreciates the moment it leaves the shelf, Shuffles now sell for a median of $65, a 33% premium. Premium-condition units fetch nearly $150, more than triple the original cost.</p>
-
-        <div class="chart-container">
-    <iframe 
-        title="Only the iPod Shuffle Is Selling Above Its Original Price"
-        aria-label="Grouped bar chart comparing original MSRP and median resale prices"
-        id="datawrapper-chart-Jt6VH"
-        src="https://datawrapper.dwcdn.net/Jt6VH/1/"
-        scrolling="no"
-        frameborder="0"
-        style="width: 100%; border: none;"
-        height="703"
-        data-external="1">
-    </iframe>
-</div>
-        <p>The Shuffle isn’t alone in appreciating, but it is the clear winner. When looking at premium-condition listings (the top 25% by price), five of nine devices analyzed showed gains over their original MSRP: the iPod Classic (+42%), iPod Nano (+23%), iPod Hi-Fi (+19%), and even the Mac Mini M1 (+177%). But none matched the Shuffle's across-the-board gains.</p>
-
-    <div class="chart-container">
-    <iframe 
-        title="At the High End of the Market, the Shuffle Leads All Devices"
-        aria-label="Horizontal bar chart showing percent change from original MSRP for the top 25% of eBay listings"
-        id="datawrapper-chart-87sUa"
-        src="https://datawrapper.dwcdn.net/87sUa/2/"
-        scrolling="no"
-        frameborder="0"
-        style="width: 100%; border: none;"
-        height="406"
-        data-external="1">
-    </iframe>
-</div>
-
-        <p>The losers tell an equally important story. The iPod Touch—Apple's most feature-rich iPod—has lost 66% of its value. The Microsoft Zune HD, despite its cult following, is down 69%. The iPod Mini, once a cultural phenomenon, now sells for less than $70.</p>
-
-        <p>Mohammad Uddin, manager of TSS Phones and Computers in New York, has spent ten years in the used device business. He's seen the occasional customer ask for a classic iPod, but says there's "no significant number" of requests. When they do come in, though, the appeal is clear: "They always like the style," he says. "How it used to play the music ... they can use it for a long time."</p>
-
-        <p>That nostalgia doesn't extend to every old Apple product. Uddin explains why the iPod Touch fails where the Shuffle succeeds: "That thing can be done on the phone, so they don't need any extra device to carry on."</p>
-
-        <p>There's a pattern here. The devices that hold value are the ones that do one thing well—play music—without trying to be a smartphone. The Shuffle had no screen, no apps, no distractions. The Classic had its iconic click wheel. The Hi-Fi was just a speaker. Meanwhile, the Touch was always just a worse iPhone, and now that phones are ubiquitous, nobody needs one.</p>
-
-        <p>The data suggests we're not in the middle of a massive nostalgia bubble. Uddin confirms it's a "smaller bubble"—real demand from a niche audience, not a mainstream revival. But for those niche buyers, simplicity has become a feature, not a limitation. In an age of infinite notifications and algorithmic feeds, a device that just plays music has found its moment.</p>
-
-        <p>The dumbest iPod turned out to be the smartest investment.</p>
-
-        <p class="source-note">
-            <strong>Data:</strong> Analysis of 900 eBay listings collected via eBay Browse API on March 1, 2026. Original MSRP data from Apple press releases and product archives.<br><br>
-            <strong>GitHub Repository:</strong> <a href="https://github.com/kylieklifton/Project2_iPods_trend_again">github.com/kylieklifton/Project2_iPods_trend_again</a>
-        </p>
-    </article>
 </body>
 </html>
