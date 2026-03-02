@@ -79,7 +79,29 @@
     </style>
 </head>
         </article>
+<script>
+(function () {
+  const phrases = [
+    "iPod Shuffle",
+    "iPod"
+  ];
 
+  // Only touch text inside the article container
+  const container = document.querySelector(".container");
+  if (!container) return;
+
+  // Walk through text nodes and replace matches with spans
+  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+
+  nodes.forEach(node => {
+    const text = node.nodeValue;
+    if (!text || !phrases.some(p => text.includes(p))) return;
+
+    // Avoid changing inside scripts/styles
+    const parentTag = node.parentNode && node.parentNode.nodeName;
+    if (["SCRIPT", "STYLE"].includes
     <script>
     window.addEventListener("message", function(event) {
       if (event.data["datawrapper-height"]) {
@@ -102,9 +124,9 @@
         <p class="subtitle">The screenless iPod Shuffle is the only discontinued Apple device selling above its original price</p>
         <p class="byline">By Kylie Clifton | March 1, 2026</p>
 
-        <p>When Apple discontinued the iPod Shuffle in 2017, it seemed like the end of an era. The tiny, screenless music player—dismissed by many as the "dumb" iPod—had been overshadowed by smartphones for years. But nearly a decade later, something unexpected has happened: the Shuffle is now worth more than it cost new.</p>
+        <p>When Apple discontinued the iPod Shuffle in 2017, it seemed like the end of an era. The tiny, screenless music player, dismissed by many as the “dumb” iPod, had been overshadowed by smartphones for years. But nearly a decade later, something unexpected has happened: the Shuffle is now worth more than it cost new.</p>
 
-        <p>An analysis of 900 eBay listings across nine discontinued devices found that the iPod Shuffle is the only one where even average listings sell above the original retail price. While most vintage tech depreciates the moment it leaves the shelf, Shuffles now sell for a median of $65—a 33% premium over their original $49 price tag. Premium-condition units fetch nearly $150, more than triple the original cost.</p>
+        <p>An analysis of 900 eBay listings across nine discontinued devices found that the iPod Shuffle is the only one where even average listings sell above the original retail price. While most vintage tech depreciates the moment it leaves the shelf, Shuffles now sell for a median of $65, a 33% premium. Premium-condition units fetch nearly $150, more than triple the original cost.</p>
 
         <div class="chart-container">
     <iframe 
@@ -122,7 +144,7 @@
         Median asking prices from 100 eBay listings per device, pulled March 1, 2026. Source: eBay Browse API.
     </p>
 </div>
-        <p>The Shuffle isn't alone in the appreciation game—but it is the clear winner. When looking at premium-condition listings (the top 25% by price), five of nine devices analyzed showed gains over their original MSRP: the iPod Classic (+42%), iPod Nano (+23%), iPod Hi-Fi (+19%), and even the Mac Mini M1 (+177%). But none matched the Shuffle's across-the-board gains.</p>
+        <p>The Shuffle isn’t alone in appreciating, but it is the clear winner. When looking at premium-condition listings (the top 25% by price), five of nine devices analyzed showed gains over their original MSRP: the iPod Classic (+42%), iPod Nano (+23%), iPod Hi-Fi (+19%), and even the Mac Mini M1 (+177%). But none matched the Shuffle's across-the-board gains.</p>
 
     <div class="chart-container">
     <iframe 
@@ -143,7 +165,7 @@
 
         <p>The losers tell an equally important story. The iPod Touch—Apple's most feature-rich iPod—has lost 66% of its value. The Microsoft Zune HD, despite its cult following, is down 69%. The iPod Mini, once a cultural phenomenon, now sells for less than $70.</p>
 
-        <p>Mohammad Uddin, manager of TSS Phones and Computers in New York, has spent ten years in the used device business. He's seen the occasional customer ask for a classic iPod, but says there's "no significant number" of requests. When they do come in, though, the appeal is clear: "They always like the style," he says. "How it used to play the music... they can use it for a long time."</p>
+        <p>Mohammad Uddin, manager of TSS Phones and Computers in New York, has spent ten years in the used device business. He's seen the occasional customer ask for a classic iPod, but says there's "no significant number" of requests. When they do come in, though, the appeal is clear: "They always like the style," he says. "How it used to play the music ... they can use it for a long time."</p>
 
         <p>That nostalgia doesn't extend to every old Apple product. Uddin explains why the iPod Touch fails where the Shuffle succeeds: "That thing can be done on the phone, so they don't need any extra device to carry on."</p>
 
