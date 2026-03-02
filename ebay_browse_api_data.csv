@@ -1,0 +1,10 @@
+Device,Original_MSRP,eBay_Low,eBay_High,eBay_Median,Top_25_Pct_Price,Listings_Count,Median_vs_MSRP,Top25_vs_MSRP,Source
+iPod Shuffle,49,12.0,750.0,65.0,148.71,100,32.7,203.5,eBay Browse API
+Mac Mini M1,699,5.0,9999.0,422.69,1938.96,100,-39.5,177.4,eBay Browse API
+iPod Classic,249,9.69,799.99,179.99,353.97,100,-27.7,42.2,eBay Browse API
+iPod Nano,149,45.99,578.95,107.88,183.48,100,-27.6,23.1,eBay Browse API
+iPod Hi-Fi,349,9.5,1199.98,149.95,415.33,100,-57.0,19.0,eBay Browse API
+Zune HD,290,7.89,600.0,89.49,239.05,100,-69.1,-17.6,eBay Browse API
+Sony Walkman,298,14.99,305.26,157.49,228.32,100,-47.2,-23.4,eBay Browse API
+iPod Touch,399,39.99,299.99,134.47,269.69,100,-66.3,-32.4,eBay Browse API
+iPod Mini,249,3.99,399.0,69.99,165.46,100,-71.9,-33.5,eBay Browse API
