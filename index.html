@@ -77,32 +77,16 @@
     font-weight: 600;
 }
     </style>
-</head>
-        </article>
 <script>
-(function () {
-  const phrases = [
-    "iPod Shuffle",
-    "iPod"
-  ];
-
-  // Only touch text inside the article container
+document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".container");
   if (!container) return;
 
-  // Walk through text nodes and replace matches with spans
-  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
-  const nodes = [];
-  while (walker.nextNode()) nodes.push(walker.currentNode);
-
-  nodes.forEach(node => {
-    const text = node.nodeValue;
-    if (!text || !phrases.some(p => text.includes(p))) return;
-
-    // Avoid changing inside scripts/styles
-    const parentTag = node.parentNode && node.parentNode.nodeName;
-    if (["SCRIPT", "STYLE"].includes
-    <script>
+  // Replace iPod Shuffle first so "iPod" doesn't wrap inside it
+  container.innerHTML = container.innerHTML
+    .replaceAll("iPod Shuffle", '<span class="ipod-highlight">iPod Shuffle</span>');
+});
+</script>
     window.addEventListener("message", function(event) {
       if (event.data["datawrapper-height"]) {
         var iframes = document.querySelectorAll("iframe");
@@ -140,9 +124,6 @@
         height="703"
         data-external="1">
     </iframe>
-    <p class="chart-caption">
-        Median asking prices from 100 eBay listings per device, pulled March 1, 2026. Source: eBay Browse API.
-    </p>
 </div>
         <p>The Shuffle isn’t alone in appreciating, but it is the clear winner. When looking at premium-condition listings (the top 25% by price), five of nine devices analyzed showed gains over their original MSRP: the iPod Classic (+42%), iPod Nano (+23%), iPod Hi-Fi (+19%), and even the Mac Mini M1 (+177%). But none matched the Shuffle's across-the-board gains.</p>
 
@@ -158,9 +139,6 @@
         height="406"
         data-external="1">
     </iframe>
-    <p class="chart-caption">
-        Top 25% of current eBay listings by price compared with original MSRP (100 listings per device; pulled March 1, 2026). Source: eBay Browse API.
-    </p>
 </div>
 
         <p>The losers tell an equally important story. The iPod Touch—Apple's most feature-rich iPod—has lost 66% of its value. The Microsoft Zune HD, despite its cult following, is down 69%. The iPod Mini, once a cultural phenomenon, now sells for less than $70.</p>
