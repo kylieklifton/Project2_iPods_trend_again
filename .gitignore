@@ -2,7 +2,6 @@
 .claude/
 
 # Exclude PNG images
-*.png
 
 # Environment files
 .env
