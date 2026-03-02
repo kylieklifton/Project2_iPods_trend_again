@@ -1,7 +1,5 @@
 # Data Diary - iPod Price Analysis Project
 
-## 2026-03-01
-
 ### Project Goal
 Figure out if discontinued music players are actually selling for more than they originally cost.
 
